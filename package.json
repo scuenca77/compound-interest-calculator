@@ -1,0 +1,46 @@
+{
+  "name": "compound-interest-calculator",
+  "version": "1.0.0",
+  "description": "Componente React reutilizable para calcular interés compuesto con UI personalizable",
+  "type": "module",
+  "main": "./dist/compound-interest-calculator.umd.js",
+  "module": "./dist/compound-interest-calculator.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/compound-interest-calculator.es.js",
+      "require": "./dist/compound-interest-calculator.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "calculator",
+    "compound-interest",
+    "finance"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "vite": "^7.3.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "recharts": "^3.6.0"
+  }
+}
