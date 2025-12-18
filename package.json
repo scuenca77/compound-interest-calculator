@@ -10,7 +10,8 @@
       "import": "./dist/compound-interest-calculator.es.js",
       "require": "./dist/compound-interest-calculator.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/compound-interest-calculator.css",
+    "./dist/compound-interest-calculator.css": "./dist/compound-interest-calculator.css"
   },
   "files": [
     "dist"

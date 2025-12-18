@@ -2,9 +2,31 @@
 
 Componente React reutilizable para calcular interés compuesto con UI personalizable.
 
+## Características
+
+- Cálculo de interés compuesto con fórmula financiera precisa
+- Aportaciones periódicas opcionales con diferentes frecuencias
+- Múltiples frecuencias de capitalización (anual, semestral, trimestral, mensual, diaria)
+- Gráfica visual de distribución de capital, aportaciones e intereses (usando Recharts)
+- UI totalmente personalizable mediante props (colores, textos, moneda)
+- Soporte multiidioma con textos configurables
+- Control de visibilidad de campos
+- Callback para obtener resultados del cálculo
+- Responsive y optimizado para mobile
+- Construido con React 18 y Vite
+
+## Requisitos
+
+Tu aplicación debe tener instalado:
+
+- React ^18.0.0
+- react-dom ^18.0.0
+
+La librería usa `peerDependencies` para evitar duplicar React en tu proyecto.
+
 ## Instalación
 
-### Desde GitHub
+### Desde GitHub (Recomendado)
 
 ```bash
 npm install github:tu-usuario/compound-interest-calculator
@@ -16,6 +38,12 @@ O con yarn:
 yarn add github:tu-usuario/compound-interest-calculator
 ```
 
+### Instalación Local (Para desarrollo/testing)
+
+```bash
+npm install /ruta/absoluta/al/proyecto/compound-interest-calculator
+```
+
 > **Nota**: Reemplaza `tu-usuario` con tu nombre de usuario de GitHub una vez subas el repositorio.
 
 ## Uso
@@ -24,6 +52,7 @@ yarn add github:tu-usuario/compound-interest-calculator
 
 ```jsx
 import { CompoundInterestCalculator } from 'compound-interest-calculator';
+import 'compound-interest-calculator/dist/style.css';
 
 function App() {
   return (
@@ -34,10 +63,13 @@ function App() {
 }
 ```
 
+> **Importante**: Asegúrate de importar el CSS del componente (`import 'compound-interest-calculator/dist/style.css'`) para que los estilos se apliquen correctamente.
+
 ### Con tema personalizado
 
 ```jsx
 import { CompoundInterestCalculator } from 'compound-interest-calculator';
+import 'compound-interest-calculator/dist/style.css';
 
 function App() {
   return (
@@ -98,6 +130,7 @@ function App() {
 
 ```jsx
 import { CompoundInterestCalculator } from 'compound-interest-calculator';
+import 'compound-interest-calculator/dist/style.css';
 
 function App() {
   const handleCalculate = (result) => {
@@ -117,6 +150,7 @@ function App() {
 
 ```jsx
 import { CompoundInterestCalculator } from 'compound-interest-calculator';
+import 'compound-interest-calculator/dist/style.css';
 import './mi-estilo.css';
 
 function App() {
@@ -265,6 +299,57 @@ Esto generará los archivos de distribución en la carpeta `dist/`.
 
 ```bash
 npm run preview
+```
+
+## Publicación en GitHub
+
+Para que otros puedan instalar tu librería desde GitHub, sigue estos pasos:
+
+### 1. Construir la librería
+
+Antes de hacer commit y push, asegúrate de construir la librería:
+
+```bash
+npm run build
+```
+
+Esto generará los archivos en `dist/` que son necesarios para que funcione la librería.
+
+### 2. Verificar archivos incluidos
+
+Asegúrate de que la carpeta `dist/` NO esté en `.gitignore` (debe ser committeada al repositorio para que GitHub la incluya).
+
+El `package.json` ya está configurado con el campo `files: ["dist"]` para incluir solo los archivos necesarios.
+
+### 3. Commit y push
+
+```bash
+git add .
+git commit -m "Build de la librería para publicación"
+git push origin main
+```
+
+### 4. Instalación desde GitHub
+
+Una vez publicado, otros usuarios podrán instalar tu librería con:
+
+```bash
+npm install github:tu-usuario/compound-interest-calculator
+```
+
+### 5. Versionado (Opcional)
+
+Para crear versiones específicas, usa git tags:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Los usuarios podrán instalar versiones específicas:
+
+```bash
+npm install github:tu-usuario/compound-interest-calculator#v1.0.0
 ```
 
 ## Licencia
